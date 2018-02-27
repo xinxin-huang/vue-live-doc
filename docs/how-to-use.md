@@ -140,7 +140,7 @@ console.log(msg)
 
 ### html
 ```html
-<fui-button>Default Btn</fui-button>
+<el-button>Default Btn</el-button>
 ```
 
 ---

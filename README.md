@@ -31,3 +31,7 @@ yarn serv-start
 ```
 yarn serv-stop
 ```
+
+## 写一个文档
+- 在docs目录创建md文件
+- 在src/router/routes.js中添加路由

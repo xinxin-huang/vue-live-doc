@@ -3,7 +3,7 @@ const express = require('express')
 const pkg = require('./package.json')
 
 /* 基础配置 */
-const port = 9898
+const port = 3000
 
 const app = express()
 
