@@ -26,9 +26,7 @@ let routes = [
       text: '一级菜单',
     },
     component: {
-      render () {
-        return <router-view></router-view>
-      }
+      template: '<router-view></router-view>'
     },
     children: [
       Object.assign({ path: 'vue', name: 'tree-vue' }, homeMd),
@@ -39,9 +37,7 @@ let routes = [
           text: '二级菜单',
         },
         component: {
-          render () {
-            return <router-view></router-view>
-          }
+          template: '<router-view></router-view>'
         },
         children: [
           Object.assign({ path: 'leaf', name: 'tree-leaf' }, homeMd)

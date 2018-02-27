@@ -9,9 +9,7 @@ const start = () => {
     components: {
       App
     },
-    render () {
-      return <app></app>
-    },
+    template: '<app></app>',
     router
   })
 }

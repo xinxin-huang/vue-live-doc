@@ -5,11 +5,13 @@
   "main": "",
   "license": "MIT",
   "scripts": {
-    "start": "poi",
+    "start": "node server.js",
+    "dev": "poi",
     "build": "poi build"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.16.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-loader": "^1.9.0",
@@ -38,7 +40,9 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "ejs": "^2.5.7",
     "element-ui": "^2.0.11",
+    "express": "^4.16.2",
     "highlight.js": "^9.12.0",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
