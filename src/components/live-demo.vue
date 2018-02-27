@@ -13,7 +13,7 @@
 <script type="text/babel">
   export default {
     name: 'falcon-demo',
-    props: [ 'info' ],
+    props: [ 'info' ], // 接收loader编译后传递过来的控制风格的字符串
     data () {
       return {
         showCode: false,
@@ -29,7 +29,7 @@
       }
     },
     computed: {
-      customStyle () {
+      customStyle () { // 解析控制风格的字符串，生成对应的样式配置
         this.info.split('-').forEach((name, index) => {
           const id = name.trim()
           const cur = index + 1
@@ -45,7 +45,7 @@
         }
         return this.info
       },
-      classComputed () {
+      classComputed () { // 基于样式配置，生成最终的class组合
         const obj = {}
         if (this.style.codeFolder) obj[ 'falcon-demo--showcode' ] = this.showCode
         else if (this.style.codeHidden) obj[ 'falcon-demo--showcode' ] = false

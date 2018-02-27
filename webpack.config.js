@@ -45,10 +45,12 @@ module.exports = {
                 [ require('markdown-it-emoji'), {
                   shortcuts: emojiShortcutsNow
                 } ],
+                // 运行代码的容器定义，用":::"匹配md文件中的需要运行的代码块
                 [ require('markdown-it-container'), 'live', {
                   validate: function (params) {
                     return new RegExp('(all|code|live)').test(params.trim())
                   },
+                  // 将捕获的代码块装进自定义组件falcon-demo中
                   render: function (tokens, idx) {
                     if (tokens[ idx ].nesting === 1) {
                       var info = tokens[ idx ].info
@@ -61,6 +63,7 @@ module.exports = {
                   }
                 } ]
               ],
+              // 用"<!--"匹配代码块，给运行结果加一个父容器
               afterProcessLiveTemplate: function (template) {
                 return `<div class="falcon-demo__live">${template}</div>`
               }
