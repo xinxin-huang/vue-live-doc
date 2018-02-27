@@ -1,0 +1,146 @@
+@import "vars.css";
+@import "mixins.css";
+
+@component-namespace falcon {
+  @b app {
+    position: absolute 0 0;
+
+    pre {
+      margin-top: 0;
+      margin-bottom: var(--pm-lg);
+      padding: var(--pm-sm) var(--pm-lg);
+      line-height: var(--pre-line-height);
+      background: var(--pre-bg-color);
+      border: solid 1px var(--color-border);
+      box-sizing: border-box;
+    }
+
+    code {
+      font-family: Menlo, Monaco, Consolas, Courier, monospace;
+      box-sizing: border-box;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: var(--pm-xs) var(--pm-lg);
+      margin-bottom: var(--pm-lg);
+      border-left: 5px solid var(--color-border);
+    }
+
+    hr {
+      height: 0;
+      border: 3px dashed var(--color-border);
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  /* doc container */
+  @b doc {
+    @mixin relative-block hidden;
+
+    @e header {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      @e brand {
+        height: var(--header-height);
+        line-height: var(--header-height);
+        padding: 0 var(--pm-lg);
+        border-right: solid 1px #e6e6e6;
+
+        @m name {
+          font-size: 2rem;
+          font-weight: bolder;
+        }
+
+        @m version {
+          font-size: 1rem;
+        }
+      }
+
+      @e nav {
+        @mixin relative-block auto;
+        flex: 1;
+      }
+    }
+
+    @e content {
+      @mixin relative-block auto;
+      padding: 0 var(--pm-lg);
+    }
+  }
+
+  /* table */
+  @b table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--pm-lg);
+    td,
+    th {
+      border: 1px solid var(--color-border);
+      padding: var(--pm-xs) var(--pm-sm);
+      text-align: left;
+    }
+    th {
+      background: var(--table-th-bg-color);
+      color: var(--table-th-color);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  /* demo */
+  @b demo {
+    position: relative;
+    overflow: auto;
+    margin-bottom: var(--pm-lg);
+    pre { /* 代码高亮 */
+      display: none;
+      margin-bottom: 0 !important;
+    }
+
+    /* 代码运行结果块 */
+    @e live {
+      position: relative;
+      overflow: auto;
+      border: 1px solid var(--color-border);
+      padding: var(--pm-sm) var(--pm-lg);
+    }
+
+    /* 功能控制块 */
+    @e control {
+      padding: var(--pm-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    @m showcode > pre {
+      display: block;
+    }
+
+    @m allhidden {
+      display: none;
+    }
+
+    @m livedark > .falcon-demo__live {
+      background: var(--color-dark);
+      color: var(--color-light);
+    }
+
+    @m livefull > .falcon-demo__live {
+      padding: 0;
+    }
+
+    @m livenoborder > .falcon-demo__live {
+      border: 0;
+    }
+
+    @m codenoborder > pre {
+      border: 0;
+    }
+  }
+}

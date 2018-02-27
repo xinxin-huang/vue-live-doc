@@ -1,0 +1,5 @@
+@define-mixin relative-block $overflow {
+  position: relative;
+  height: 100%;
+  overflow: $overflow;
+}

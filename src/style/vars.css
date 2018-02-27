@@ -1,0 +1,23 @@
+:root {
+  /* pm or margin size */
+  --pm-xs: 5px;
+  --pm-sm: 10px;
+  --pm-lg: 20px;
+  --pm-xl: 40px;
+
+  /* header */
+  --header-height: 61px;
+
+  /* color */
+  --color-border: #dddee1;
+  --color-dark: #222;
+  --color-light: #fff;
+
+  /* pre */
+  --pre-bg-color: #eee;
+  --pre-line-height: 24px;
+  
+  /* table */
+  --table-th-bg-color: #f1f4f9;
+  --table-th-color: #5c6b77;
+}
