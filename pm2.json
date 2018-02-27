@@ -1,0 +1,23 @@
+
+{
+  "apps": [
+    {
+      "name": "vue-doc-live",
+      "script": "./server.js",
+      "env": {
+        "COMMON_VARIABLE": "true",
+        "NODE_ENV": "production"
+      },
+      "exec_interpreter": "node",
+      "node_args": "--harmony",
+      "exec_mode": "fork",
+      "log_date_format": "YYYY-MM-DD HH:MM:SS",
+      "max_memory_restart": "1400M",
+      "merge_logs": true,
+      "error_file": "logs/PM2-Error.log",
+      "out_file": "logs/PM2-Out.log",
+      "pid_file": "logs/PM2-Process.pid",
+      "watch": "./restart-time.json"
+    }
+  ]
+}

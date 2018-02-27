@@ -5,9 +5,11 @@
   "main": "",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
     "dev": "poi",
-    "build": "poi build"
+    "build": "poi build",
+    "serv-test": "node server.js",
+    "serv-start": "pm2 start pm2.json",
+    "serv-stop": "pm2 delete pm2.json"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
